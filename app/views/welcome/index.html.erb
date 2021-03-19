@@ -1,0 +1,24 @@
+    <div class="container-fluid">
+      <ul class="nav justify-content-end">
+       <li class="nav-item">
+         <p><%= link_to 'Portugues', root_path(locale: 'pt-BR'),class:"nav-link"%></p>
+      </li>
+      <li class="nav-item">
+        <p><%= link_to 'English', root_path(locale: 'en'), class:"nav-link"%></p>
+      </li>
+     </ul>
+<%= logo_empresa%>
+
+
+  <div class="jumbotron">
+    <h1><p><%=I18n.t('hello') %> </p></h1>
+  <p><%=locale(I18n.locale) %> </p>
+  <h1 class="display-4">Lista de ramais internos da Syonet</h1>
+  <p class="lead">Para começar, selecione uma das opções abaixo: </p>
+    <%= render "menu"%>
+  <hr class="my-4">
+</div>
+
+
+
+

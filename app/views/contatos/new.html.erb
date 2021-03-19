@@ -1,0 +1,7 @@
+<h1><%=I18n.t('new_contact')%></h1>
+
+<%= render 'form', contato: @contato %>
+<th>
+    <%= link_to I18n.t('back'), contatos_path,class:"btn btn-secondary btn-sm"%>
+    <input class ="btn btn-success btn-sm" type="submit" value"enviar">
+</th>

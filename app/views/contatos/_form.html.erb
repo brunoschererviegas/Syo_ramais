@@ -1,0 +1,41 @@
+<%= form_with(model: contato, local: true) do |form| %>
+  <% if contato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contato.errors.count, "error") %> prohibited this contato from being saved:</h2>
+
+      <ul>
+      <% contato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="table table-hover">
+    <thead>
+      <tr></tr>
+        <td><%= form.label :descrisao %></td>
+        <td><%= form.text_field :descrisao %></td>
+      <tr></tr>
+        <td><%= form.label :ramal %></td>
+        <td><%= form.number_field :ramal %></td>
+      <tr></tr>
+        <td><%= form.label :ddr %></td>
+        <td><%= form.number_field :ddr %></td>
+      <tr></tr>
+        <td><%= form.label :celular %></td>
+        <td><%= form.number_field :celular %></td>
+      <tr></tr>
+        <td><%= form.label :skype %></td>
+        <td><%= form.text_field :skype %></td>
+      <tr></tr>
+        <td><%= form.label :skype %></td>
+        <td><%= form.text_field :skype %></td>
+      <tr></tr>
+          <td><%= form.label :setor_id %></td>
+          <td><%= form.select("setor_id",@setor_id_options, {include_blank: 'Selecione'})%></td>
+
+    </thead>
+      
+
+<% end %>

@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descrisao:</strong>
+  <%= @setor.descrisao %>
+</p>
+
+<% link_to 'Edit', edit_setor_path(@setor) %> 
+<%=link_to I18n.t('edit'), edit_setor_path(@setor),class:"btn btn-warning btn-sm"%>
+<%=link_to I18n.t('back'), setors_path,class:"btn btn-dark btn-sm"%>
+

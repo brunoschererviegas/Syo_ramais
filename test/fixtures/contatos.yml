@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descrisao: MyString
+  ramal: 1
+  ddr: 1
+  celular: 1
+  skype: MyString
+
+two:
+  descrisao: MyString
+  ramal: 1
+  ddr: 1
+  celular: 1
+  skype: MyString

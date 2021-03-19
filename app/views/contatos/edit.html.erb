@@ -1,0 +1,9 @@
+<h1><%=I18n.t('edit_contato')%></h1>
+
+<%= render 'form', contato: @contato %>
+<td>
+<input class ="btn btn-success btn-sm" type="submit" value"enviar">  |
+<% link_to I18n.t('show'), @contato,class:"btn btn-warning btn-sm" %> 
+<%= link_to I18n.t('back'), contatos_path,class:"btn btn-secondary btn-sm" %> 
+
+</td>

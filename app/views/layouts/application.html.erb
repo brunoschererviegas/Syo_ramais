@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SyoRamais</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+        <div class="container-fluid">
+      <ul class="nav justify-content-end">
+       <li class="nav-item">
+         <p><%= link_to I18n.t('show_setors'), setors_path,class:"btn btn-primary btn-sm"%></p>
+      </li>
+         |   
+      <li class="nav-item">
+        <p><%= link_to I18n.t('show_contact'), contatos_path,class:"btn btn-secondary btn-sm"%></p>
+       <li class="nav-item">
+         <p><%= link_to I18n.t('home_page'), welcome_index_path,class:"btn btn-outline-primary btn-sm"%></p>
+      </li>        
+        
+
+
+      </li>
+     </ul>
+
+      <%= yield %>
+  </body>
+</html>

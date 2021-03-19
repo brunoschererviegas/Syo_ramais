@@ -1,0 +1,27 @@
+<%= form_with(model: setor, local: true) do |form| %>
+  <% if setor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(setor.errors.count, "error") %> prohibited this setor from being saved:</h2>
+
+      <ul>
+      <% setor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label I18n.t('description') %>
+    <%= form.text_field :descrisao %>
+  </div>
+<div>
+<table>
+  
+  <div class="actions">
+    <% link_to I18n.t('show_setors'), @setor,class: "btn btn-secondary btn-sm" %>
+    <input class ="btn btn-success btn-sm" type="submit" value"enviar">
+    <%= link_to 'Back', setors_path ,class:"btn btn-dark btn-sm"%>
+  </div>
+  </table>
+<% end %>

@@ -1,0 +1,56 @@
+  <h1><% logo_empresa %></h1>
+  <p>
+  <% data_br(Date.today)%>
+  </p> 
+<h2> <%cookies[:teste]%> </h2>
+
+  <%image_tag'https://thumbs.dreamstime.com/z/%C3%ADcone-do-sinal-do-usu%C3%A1rio-s%C3%ADmbolo-da-pessoa-avatar-humano-84519083.jpg',size: "25x25"%>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Contatos</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Descrisao</th>
+      <th>Ramal</th>
+      <th>Ddr</th>
+      <th>Celular</th>
+      <th>Skype</th>
+      <th>Setor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+      
+
+  <tbody>
+    <% @contatos.each do |contato| %>
+      <tr>
+        <% image_tag url_icone,size: "25x25"%>
+        <td><%=teste_url%></td> <%#Imagem com helper%>
+        <td><%= contato.descrisao %></td>
+        <td><%= contato.ramal %></td>
+        <td><%= contato.ddr %></td>
+        <td><%= contato.celular %></td>
+        <td><%= contato.skype %></td>
+        <td><%= contato.setor_id %></td>
+        <td><%= link_to I18n.t('show'), contato,class:"btn btn-success btn-sm" %></td>
+        <td><%= link_to I18n.t('edit'), edit_contato_path(contato) ,class:"btn btn-warning btn-sm" %></td>
+        <td><%= link_to I18n.t('destroy'), contato,class:"btn btn-danger btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to I18n.t('new_contact'), new_contato_path,class:"btn btn-secondary btn-sm" %>
+
+
+
+
+
+

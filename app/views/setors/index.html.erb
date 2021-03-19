@@ -1,0 +1,30 @@
+
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Setors</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Descrisao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @setors.each do |setor| %>
+      <tr>
+        <td><%= setor.descrisao %></td>
+        <td><%= link_to 'Show', setor ,class:"btn btn-success btn-sm"%></td>
+        <td><%= link_to 'Edit', edit_setor_path(setor) ,class:"btn btn-warning btn-sm"%></td>
+        <td><%= link_to 'Destroy', setor,class:"btn btn-danger   btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Setor', new_setor_path ,class:"btn btn-secondary btn-sm"%>
