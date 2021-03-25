@@ -1,5 +1,6 @@
 class SetorsController < ApplicationController
   before_action :set_setor, only: %i[ show edit update destroy ]
+  http_basic_authenticate_with name: "syonet", password: "ase321klp098", only: :show
 
   # GET /setors or /setors.json
   def index
@@ -8,6 +9,7 @@ class SetorsController < ApplicationController
 
   # GET /setors/1 or /setors/1.json
   def show
+    @setors = Setor.all
   end
 
   # GET /setors/new
@@ -25,7 +27,7 @@ class SetorsController < ApplicationController
 
     respond_to do |format|
       if @setor.save
-        format.html { redirect_to @setor, notice: "Setor was successfully created." }
+        format.html { redirect_to setors_path, notice: "Setor was successfully created." }
         format.json { render :show, status: :created, location: @setor }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +40,7 @@ class SetorsController < ApplicationController
   def update
     respond_to do |format|
       if @setor.update(setor_params)
-        format.html { redirect_to @setor, notice: "Setor was successfully updated." }
+        format.html { redirect_to setors_path, notice: "Setor was successfully updated." }
         format.json { render :show, status: :ok, location: @setor }
       else
         format.html { render :edit, status: :unprocessable_entity }

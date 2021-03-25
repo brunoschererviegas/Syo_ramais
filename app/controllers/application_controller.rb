@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
     before_action :set_locale
-    http_basic_authenticate_with name: "syonet", password: "ase321klp098", only: :edit
-    def set_locale
+        def set_locale
         if params[:locale]
         cookies[:locale] = params[:locale]
     end

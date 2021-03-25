@@ -13,8 +13,8 @@
   <div class="jumbotron">
     <h1><p><%=I18n.t('hello') %> </p></h1>
   <p><%=locale(I18n.locale) %> </p>
-  <h1 class="display-4">Lista de ramais internos da Syonet</h1>
-  <p class="lead">Para começar, selecione uma das opções abaixo: </p>
+  <h1 class="display-4"><%=I18n.t('desc_home')%></h1>
+  <p class="lead"> <%=I18n.t('exp_home' )%></p>
     <%= render "menu"%>
   <hr class="my-4">
 </div>
